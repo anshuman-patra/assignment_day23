@@ -3,16 +3,13 @@ public class EmployeeWage
 	public static final int FULL_TIME=1;
 	public static final int PART_TIME=2;
 
-	public static void calculateEmployeeWage()
+	public static void calculateEmployeeWage(String company, int empRatePerHour, int numberOfWorkingDays, int totalMaxEmpHrs)
 	{
 		System.out.println("Welcome to employee wage problem");
-                int empRatePerHour=20;
-	        int numberOfWorkingDays=20;
 		int empHrs=0;
                 int totalSalary=0;
                 int totalWorkingDays=0;
                 int totalEmpHrs=0;
-                int totalMaxEmpHrs=100;
 
                 while(totalWorkingDays<numberOfWorkingDays && totalEmpHrs<totalMaxEmpHrs)
                 {
@@ -33,12 +30,13 @@ public class EmployeeWage
                 }
                 totalSalary=totalEmpHrs*empRatePerHour;
                 System.out.println("Total employee hours:" + totalEmpHrs);
-                System.out.println("Total employee wage:" + totalSalary);
+                System.out.println("Total employee wage for employee at " + company + " is " + totalSalary);
 	}
 
 	public static void main(String[] args)
 	{
-		calculateEmployeeWage();
+		calculateEmployeeWage("Dmart",20,15,80);
+		calculateEmployeeWage("BigBasket",25,20,100);
+		calculateEmployeeWage("Reliance",30,25,120);
 	}
 }
-
